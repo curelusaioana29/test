@@ -10,9 +10,11 @@ document
     const address = document.getElementById("address").value;
 
     const user = { name, number, email, address };
-
+    const server = "http://localhost:3001";
     const method = userId ? "PUT" : "POST";
-    const url = userId ? `/api/users/${userId}` : "/api/users";
+    const url = userId
+      ? `${server}/api/users/${userId}`
+      : `${server}/api/users`;
 
     fetch(url, {
       method: method,
